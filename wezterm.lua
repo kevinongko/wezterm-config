@@ -61,6 +61,20 @@ if platform:find("windows") then
 		mods = "ALT",
 		action = act.CloseCurrentPane({ confirm = true }),
 	})
+
+	-- Copy = Ctrl+C
+	table.insert(config.keys, {
+		key = "c",
+		mods = "CTRL",
+		action = act.CopyTo("Clipboard"), -- Copy selected text to system clipboard
+	})
+
+	-- Paste = Ctrl+V
+	table.insert(config.keys, {
+		key = "v",
+		mods = "CTRL",
+		action = act.PasteFrom("Clipboard"), -- Paste from system clipboard
+	})
 end
 
 return config
